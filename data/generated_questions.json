@@ -1,0 +1,132 @@
+[
+  {
+    "question": "In the described surgical procedure, what is the primary purpose of using cold-blood potassium cardioplegia?",
+    "options": [
+      "A. To reduce systemic inflammation during surgery",
+      "B. To protect the myocardium by inducing cardiac arrest",
+      "C. To minimize blood loss during the operation",
+      "D. To prevent postoperative infection"
+    ],
+    "correct_answer": "B",
+    "explanation": "The primary purpose of using cold-blood potassium cardioplegia during cardiac surgery is to protect the myocardium by inducing cardiac arrest. This allows the heart to be in a motionless and relaxed state, reducing metabolic demands and thereby protecting heart tissue during the period of ischemia while the coronary bypass grafts are being performed. Option A is incorrect because cardioplegia is not used to reduce systemic inflammation. Option C is wrong because cardioplegia is not directly related to minimizing blood loss; rather, it is related to myocardial protection. Option D is incorrect because cardioplegia does not prevent postoperative infection; infection control is managed through sterile techniques and antibiotics.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Coronary bypass graft x2 utilizing left internal mammary artery, the left anterior descending, reverse autogenous reverse autogenous saphenous vein graft to the obtuse marginal.  Total cardiopulmonary bypass, cold-blood potassium cardioplegia, antegrade for myocardial protection."
+  },
+  {
+    "question": "What was the primary reason for performing the left upper lobectomy in this 84-year-old patient?",
+    "options": [
+      "A. To remove a mass identified as non-small-cell carcinoma.",
+      "B. To treat recurring lymphoma that was in remission.",
+      "C. To alleviate symptoms caused by an enlarged right axillary lymph node.",
+      "D. To repair a structural anomaly in the left upper lobe bronchus."
+    ],
+    "correct_answer": "A",
+    "explanation": "The primary reason for performing the left upper lobectomy was to remove a mass in the left upper lobe, which was identified through biopsy as a primary non-small-cell carcinoma. The procedure was indicated after the mass was confirmed to be cancerous and a PET scan showed no spread, making resection advisable. Answer B is incorrect as the lymphoma was in remission and not the reason for the lobectomy. Answer C is incorrect because the enlarged right axillary lymph node was biopsied and found negative for lymphoma, and it was not a reason for the surgery. Answer D is incorrect as the surgery was not performed to repair a bronchial anomaly but to remove the cancerous mass.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Left muscle sparing mini thoracotomy with left upper lobectomy and mediastinal lymph node dissection.  Intercostal nerve block for postoperative pain relief at five levels."
+  },
+  {
+    "question": "In the context of the urgent cardiac catheterization detailed in the transcription, which of the following is the most likely reason for proceeding with an urgent coronary angiogram despite the normal findings?",
+    "options": [
+      "A. To confirm the absence of coronary artery disease in a post-cardiac arrest patient.",
+      "B. To evaluate the aortic valve gradient due to suspected aortic stenosis.",
+      "C. To identify potential peripheral vascular disease affecting the femoral artery.",
+      "D. To rule out pulmonary embolism as the cause of the cardiac arrest."
+    ],
+    "correct_answer": "A",
+    "explanation": "The correct answer is A. In this case, the patient had an abnormal EKG and a cardiac arrest, prompting an urgent coronary angiogram to rule out coronary artery disease as the cause. Despite the normal angiogram findings, it is crucial to confirm the absence of coronary disease in a patient who presented with such severe symptoms. Option B is incorrect because the transcription indicates there was no gradient across the aortic valve, making aortic stenosis unlikely. Option C is incorrect as the focus was on the coronary arteries, not peripheral vascular disease. Option D is incorrect because a coronary angiogram is not used to diagnose pulmonary embolism; other imaging modalities would be appropriate for that purpose.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Urgent cardiac catheterization with coronary angiogram."
+  },
+  {
+    "question": "Based on the cardiac catheterization findings, which of the following best describes the severity of the patient's aortic stenosis?",
+    "options": [
+      "A. Mild, with an aortic valve area >1.5 cm2",
+      "B. Moderate, with an aortic valve area between 1.0 and 1.5 cm2",
+      "C. Moderate-to-severe, with an aortic valve area between 0.8 and 1.0 cm2",
+      "D. Severe, with an aortic valve area <0.8 cm2"
+    ],
+    "correct_answer": "C",
+    "explanation": "The correct answer is C. The patient's aortic valve area is 0.89 cm2, which falls within the range of 0.8 to 1.0 cm2, indicating moderate-to-severe aortic stenosis. Answer A is incorrect because a mild stenosis would have an aortic valve area greater than 1.5 cm2. Answer B defines moderate stenosis, which is not the case here, as the patient's valve area is less than 1.0 cm2. Answer D describes severe stenosis, which is characterized by a valve area less than 0.8 cm2, and the patient's valve area is slightly above this threshold.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Left heart catheterization, LV cineangiography, selective coronary angiography, and right heart catheterization with cardiac output by thermodilution technique with dual transducer."
+  },
+  {
+    "question": "In a patient with a pacemaker and underlying atrial fibrillation, what is the expected effect of an adenosine Myoview stress test on heart rate and blood pressure?",
+    "options": [
+      "A. Heart rate remains constant; blood pressure decreases",
+      "B. Heart rate increases; blood pressure increases",
+      "C. Heart rate decreases; blood pressure decreases",
+      "D. Heart rate remains constant; blood pressure increases"
+    ],
+    "correct_answer": "A",
+    "explanation": "During an adenosine Myoview stress test, adenosine is used as a vasodilator to simulate exercise by increasing blood flow to the heart. In patients with a pacemaker, the heart rate is controlled by the device and does not typically change in response to adenosine. However, adenosine can cause vasodilation, leading to a decrease in blood pressure. Therefore, the correct answer is A: Heart rate remains constant; blood pressure decreases. Options B and D are incorrect because they suggest an increase in blood pressure, which is not a typical response to adenosine. Option C is incorrect because it implies a decrease in heart rate, which would not occur due to the pacemaker control.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Stress test - Adenosine Myoview.  Ischemic cardiomyopathy.  Inferoseptal and apical transmural scar."
+  },
+  {
+    "question": "Based on the findings from the staging CT of the chest, which of the following locations is most likely to indicate metastatic spread of the patient's adenocarcinoma?",
+    "options": [
+      "A. Right supraclavicular lymph node",
+      "B. Left lung parenchyma",
+      "C. Right kidney cyst",
+      "D. Right middle lobe consolidation"
+    ],
+    "correct_answer": "A",
+    "explanation": "The right supraclavicular lymph node is enlarged and is a common site for metastatic spread, particularly in cases of lung cancer like adenocarcinoma. This is indicated by the finding of a large lymph node in the right supraclavicular region. The left lung parenchyma shows no lesions, making metastatic spread there unlikely at this time. The right kidney cyst is described as solitary and non-neoplastic, so it is not indicative of metastatic spread. The right middle lobe consolidation is most likely related to the primary pulmonary neoplasm rather than metastatic spread.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " A 68-year-old white male with recently diagnosed adenocarcinoma by sputum cytology.  An abnormal chest radiograph shows right middle lobe infiltrate and collapse.  Patient needs staging CT of chest with contrast. "
+  },
+  {
+    "question": "What is the most appropriate immediate management strategy for Baby XYZ's pulmonary hypertension as described in the medical transcription?",
+    "options": [
+      "A. Continue oxygen therapy",
+      "B. Administer Indocin",
+      "C. Start oral diuretics",
+      "D. Initiate antibiotic therapy"
+    ],
+    "correct_answer": "A",
+    "explanation": "The correct answer is A. Continue oxygen therapy. The transcription indicates that Baby XYZ has significant pulmonary hypertension and is currently on 60% FiO2, which suggests oxygen therapy is already in use. The impression explicitly states that the best therapy is to continue oxygen, and if the clinical condition worsens, the addition of nitric oxide may be considered. Option B, administering Indocin, is incorrect because Indocin is contraindicated in this situation until pulmonary artery pressures are lower. Option C, starting oral diuretics, is not mentioned as part of the management plan and is not typically used as a first-line treatment for pulmonary hypertension in neonates. Option D, initiating antibiotic therapy, is not relevant to managing pulmonary hypertension unless there is a concurrent infection, which is not indicated in the transcription.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Increasing oxygen requirement.  Baby boy has significant pulmonary hypertension.  "
+  },
+  {
+    "question": "A 55-year-old patient presents with shortness of breath, fatigue, weakness, hypertension, and hyperlipidemia. Based on the medical transcription, what is the primary purpose of the current evaluation?",
+    "options": [
+      "A. To diagnose heart failure",
+      "B. To evaluate for coronary artery disease",
+      "C. To monitor blood pressure control",
+      "D. To assess lipid profile changes"
+    ],
+    "correct_answer": "B",
+    "explanation": "The medical transcription indicates that the purpose of the evaluation is 'To evaluate for coronary artery disease.' This is explicitly stated in the transcription, making option B the correct answer. Option A is incorrect because heart failure diagnosis is not mentioned as the purpose of the evaluation. Option C is incorrect as monitoring blood pressure control is not the focus here, despite the patient having hypertension. Option D is incorrect because the evaluation is not intended to assess changes in lipid profile, even though the patient has hyperlipidemia.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Myocardial perfusion study at rest and stress, gated SPECT wall motion study at stress and calculation of ejection fraction."
+  },
+  {
+    "question": "In the cardiac catheterization procedure described, which of the following medications was used intracoronarily to manage coronary vasospasm or improve coronary flow?",
+    "options": [
+      "A. IV Valium",
+      "B. IV Benadryl",
+      "C. Intracoronary nitroglycerin",
+      "D. IV heparin"
+    ],
+    "correct_answer": "C",
+    "explanation": "Intracoronary nitroglycerin is used during cardiac catheterization procedures to manage coronary vasospasm and improve coronary blood flow, which can be critical in the setting of acute MI and coronary interventions. IV Valium is a sedative and not used for coronary vasospasm. IV Benadryl is an antihistamine used for allergic reactions and has no role in coronary vasospasm management. IV heparin is an anticoagulant used to prevent clot formation, not for vasodilation.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Cardiac catheterization and coronary intervention report."
+  },
+  {
+    "question": "During the mitral valve repair procedure described, which technique was used to address the laxity of the posterior leaflet following the excision of the abscessed P2 segment?",
+    "options": [
+      "A. Placement of a 2-0 Ethibond pledgeted suture",
+      "B. Use of a Cosgrove Galloway Medtronic fuser band",
+      "C. Application of a 4-0 Prolene running stitch",
+      "D. Reinforcement with umbilical tape"
+    ],
+    "correct_answer": "A",
+    "explanation": "The correct answer is A. Placement of a 2-0 Ethibond pledgeted suture was specifically mentioned in the transcription as the technique used to reconstruct the posterior annular portion after excising the P2 segment due to laxity. Option B refers to the annuloplasty technique used later in the procedure to address mild regurgitation, not the immediate repair of the posterior leaflet. Option C describes the method used to reconstruct the anterior portion of the P2 segment, not addressing the initial laxity. Option D is incorrect as umbilical tape was used for encircling vessels, not for leaflet repair.",
+    "medical_specialty": " Cardiovascular / Pulmonary",
+    "description": " Mitral valve repair using a quadrangular resection of the P2 segment of the posterior leaflet.  Mitral valve posterior annuloplasty using a Cosgrove Galloway Medtronic fuser band.  Posterior leaflet abscess resection."
+  }
+]
