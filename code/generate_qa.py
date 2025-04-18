@@ -17,8 +17,8 @@ def load_data(file_path):
         print(f"Error loading data: {e}")
         exit(1)
 
-def generate_question(client, transcription, num_qas_per_transcription, model="gpt-4o"):
-    """Generate a multiple-choice question based on the transcription using OpenAI API."""
+def generate_question(client, transcription, num_qas_per_transcription, model="gpt-4o") -> list:
+    """Generate multiple-choice question(s) based on the transcription"""
     
     prompt = f"""
     Generate {num_qas_per_transcription} non-trivial multiple-choice question(s) based on the medical transcription below. 
@@ -31,25 +31,57 @@ def generate_question(client, transcription, num_qas_per_transcription, model="g
     
     Medical Transcription:
     {transcription}
-    
-    Format your response as JSON with the following structure:
-    {{
-        "question": "The question text",
-        "options": [
-            "A. First option",
-            "B. Second option",
-            "C. Third option",
-            "D. Fourth option"
-        ],
-        "correct_answer": "A",  # Just the letter of the correct answer
-        "explanation": "Detailed explanation of why the correct answer is right and others are wrong"
-    }}
     """
+
+    response_format = {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "qa_list",
+            "strict": True,
+            "description": "Question and Answer list",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "qas": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "question": {
+                                    "type": "string",
+                                    "description": "The question text"
+                                },
+                                "options": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "An answer option"
+                                    }
+                                },
+                                "correct_answer": {
+                                    "type": "string",
+                                    "description": "The letter corresponding to the correct answer"
+                                },
+                                "explanation": {
+                                    "type": "string",
+                                    "description": "Detailed explanation of why the correct answer is right and others are wrong"
+                                }
+                            },
+                            "required": ["question", "options", "correct_answer", "explanation"],
+                            "additionalProperties": False
+                        }
+                    }
+                },
+                "required": ["qas"],
+                "additionalProperties": False
+            }
+        }
+    }
     
     try:
         response = client.chat.completions.create(
             model=model,
-            response_format={"type": "json_object"},
+            response_format=response_format,
             messages=[
                 {"role": "system", "content": "You are a medical education expert who creates high-quality assessment questions for healthcare professionals."},
                 {"role": "user", "content": prompt}
@@ -57,7 +89,8 @@ def generate_question(client, transcription, num_qas_per_transcription, model="g
             temperature=0.7
         )
         
-        return json.loads(response.choices[0].message.content)
+        return json.loads(response.choices[0].message.content)["qas"]
+        # return response.choices[0].message.parsed
     except Exception as e:
         print(f"Error generating question: {e}")
         return None
@@ -68,8 +101,8 @@ def main():
     parser.add_argument("--output", default="data/generated_questions.json", help="Path to output JSON file")
     parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model to use")
     parser.add_argument("--medical_specialty", default="Cardiovascular / Pulmonary", help="Medical specialty to filter to")
-    parser.add_argument("--transcriptions", type=int, default=10, help="Number of transcriptions to sample for question generation")
-    parser.add_argument("--samples", type=int, default=3, help="Number of question-answer pairs to sample per transcription")
+    parser.add_argument("--transcriptions", type=int, default=10, help="Number of transcriptions to sample")
+    parser.add_argument("--samples", type=int, default=1, help="Number of question-answer pairs to sample per transcription")
     
     args = parser.parse_args()
     
@@ -90,25 +123,35 @@ def main():
     
     # Sample transcriptions if requested
     if args.transcriptions and args.transcriptions < len(df):
+        print(f"Sampling {args.transcriptions} transcriptions")
         df = df.sample(args.transcriptions, random_state=42)
     
     # Generate questions
     questions = []
-    print(f"Generating questions using {args.model}...")
+    print(f"Generating {args.samples} questions per transcription using {args.model}...")
     for _, row in tqdm(df.iterrows(), total=len(df)):
         if not pd.isna(row['transcription']) and len(str(row['transcription'])) > 100:
-            qa = generate_question(client, str(row['transcription']), args.model)
-            if qa:
-                # Add metadata if available in the dataset
-                if 'medical_specialty' in df.columns:
-                    qa['medical_specialty'] = row.get('medical_specialty', '')
-                if 'description' in df.columns:
-                    qa['description'] = row.get('description', '')
+            qas = generate_question(
+                client, 
+                transcription=str(row['transcription']), 
+                num_qas_per_transcription=args.samples, 
+                model=args.model
+            )
+            if qas:
+                for qa in qas:
+                    # Add metadata if available in the dataset
+                    if 'medical_specialty' in df.columns:
+                        qa['medical_specialty'] = row.get('medical_specialty', '')
+                    if 'description' in df.columns:
+                        qa['description'] = row.get('description', '')
+                    
+                    # Add the original transcription in
+                    qa["transcription"] = str(row["transcription"])
+                    
+                    questions.append(qa)
                 
-                questions.append(qa)
-                
-                # Add a small delay to avoid rate limits
-                time.sleep(0.5)
+            # Add a small delay to avoid rate limits
+            time.sleep(0.5)
     
     # Save questions to output file
     with open(args.output, 'w') as f:
