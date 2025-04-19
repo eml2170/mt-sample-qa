@@ -5,7 +5,8 @@ from data_loader import get_qas
 
 def main():
     qas = get_qas()
-
+    answers = []
+    num_correct = 0
     for i, qa in enumerate(qas):
         full_question = f"""
         Clinical Note: ```{qa["transcription"]}```
@@ -40,12 +41,21 @@ def main():
             'content': raw_response["message"]["content"],
         },
         ])
-        print(final_answer['message']['content'])
-        print(f"CORRECT ANSWER: {qa["correct_answer"]}")
-        print("=========================================================")
+        answer = final_answer['message']['content']
+        answers.append(answer)
 
-        if i == 4:
-            return
+        if answer == qa["correct_answer"]:
+            num_correct += 1
+        accuracy = num_correct/(i+1)
+        if (i+1) % 10 == 0:
+            print(f"Processed {i+1} questions. Accuracy={accuracy:.2f}")
+        
+        # print(f"CORRECT ANSWER: {qa["correct_answer"]}")
+        # print("=========================================================")
+    accuracy = num_correct/len(qas)
+    print(accuracy)
+    with open("answers_llama3_2_1b.txt", "w") as f:
+        f.write("\n".join(answers))
 
 if __name__ == "__main__":
     main()
