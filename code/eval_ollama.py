@@ -17,17 +17,30 @@ def main():
         """
         # print(full_question)
         
-        response: ChatResponse = chat(model='llama3.2:1b', messages=[
+        raw_response: ChatResponse = chat(model='llama3.2:1b', messages=[
         {
             'role': 'system',
-            'content': 'You are an expert in answering multiple choice clinical questions about a clinical note. Respond only with the choice letter (A, B, C, or D) and nothing else.',
+            'content': 'You are an expert in answering multiple choice clinical questions about a clinical note.',
         },
         {
             'role': 'user',
             'content': full_question,
         },
         ])
-        print(response['message']['content'])
+        # log this somewhere?
+        # print(response['message']['content'])
+        
+        final_answer: ChatResponse = chat(model='llama3.2:1b', messages=[
+        {
+            'role': 'system',
+            'content': 'You are an expert in parsing out the answer given to a multiple choice question. Respond only with the capital letter of the answer that was chosen.',
+        },
+        {
+            'role': 'user',
+            'content': raw_response["message"]["content"],
+        },
+        ])
+        print(final_answer['message']['content'])
         print(f"CORRECT ANSWER: {qa["correct_answer"]}")
         print("=========================================================")
 
